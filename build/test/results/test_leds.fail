@@ -2,17 +2,49 @@
 :source:
   :path: test
   :file: test_leds.c
-:successes: []
-:failures:
+:successes:
 - :test: test_todos_los_leds_inician_apagados
-  :line: 5
-  :message: Arrancamos
+  :line: 49
+  :message: ''
+  :unity_test_time: 0
+- :test: test_prender_un_led
+  :line: 59
+  :message: ''
+  :unity_test_time: 0
+- :test: test_apagar_un_led
+  :line: 66
+  :message: ''
+  :unity_test_time: 0
+- :test: test_prender_y_apagar_varios_leds
+  :line: 74
+  :message: ''
+  :unity_test_time: 0
+- :test: test_error_en_parametro
+  :line: 84
+  :message: ''
+  :unity_test_time: 0
+- :test: test_error_encender_todos_leds
+  :line: 99
+  :message: ''
+  :unity_test_time: 0
+- :test: test_error_apagar_todos_leds
+  :line: 106
+  :message: ''
+  :unity_test_time: 0
+- :test: test_estado_apagado
+  :line: 119
+  :message: ''
+  :unity_test_time: 0
+:failures:
+- :test: test_estado_encendido
+  :line: 115
+  :message: Expected 1 Was 4
   :unity_test_time: 0
 :ignores: []
 :counts:
-  :total: 1
-  :passed: 0
+  :total: 9
+  :passed: 8
   :failed: 1
   :ignored: 0
 :stdout: []
-:time: 0.002512650999960897
+:time: 0.001204144999064738

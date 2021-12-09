@@ -89,10 +89,35 @@ void test_error_en_parametro(void) {
   TEST_ASSERT_EQUAL(0, error.gravedad); // si llama , sale aca
   TEST_ASSERT_EQUAL_STRING("LedsOn", error.funcion);
 
-  // error.gravedad = -1;
-  // memset(error.funcion, 0, sizeof(error.funcion));
-
   LedsOn(0);
   TEST_ASSERT_EQUAL(0, error.gravedad);
   TEST_ASSERT_EQUAL_STRING("LedsOn", error.funcion);
+}
+
+//***********************inicio continuacion TP3****************//
+/*5 Prender todos los leds juntos*/
+void test_error_encender_todos_leds(void) {
+  LedsAllOff();
+  LedsAllOn();
+  TEST_ASSERT_EQUAL_HEX16(0XFFFF, puertoVirtual);
+}
+
+/*6 Apagar todos los leds juntos*/
+void test_error_apagar_todos_leds(void) {
+  LedsAllOn();
+  LedsAllOff();
+  TEST_ASSERT_EQUAL_HEX16(0x0000, puertoVirtual);
+}
+
+/*7 Consultar el estado de un leds apagado*/
+void test_estado_encendido(void) {
+  LedsOn(LED);
+  TEST_ASSERT_EQUAL(1, puertoVirtual);
+}
+
+/*8 Consultar el estado de un led encendido*/
+void test_estado_apagado(void) {
+
+  LedsOff(LED);
+  TEST_ASSERT_EQUAL(0, puertoVirtual);
 }
